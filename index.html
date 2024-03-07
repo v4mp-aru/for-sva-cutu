@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For SVA LOML</title>
+    <style>
+        body {
+            background-color: #ffd1dc; /* Baby pink background */
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        #noBtn {
+            opacity: 1;
+        }
+        #noBtn.fade {
+            opacity: 0.2; /* Fade out the 'No' button */
+        }
+    </style>
+</head>
+<body>
+    <h1>Is Aradhana ur fav?</h1>
+    <button id="yesBtn" onclick="window.location.href='video.html';">Yes</button>
+    <button id="noBtn" onclick="handleNoClick()">No</button>
+
+    <script>
+        function handleNoClick() {
+            var noBtn = document.getElementById("noBtn");
+            var yesBtn = document.getElementById("yesBtn");
+
+            // Increase the size of the 'Yes' button
+            var computedStyle = window.getComputedStyle(yesBtn);
+            var fontSize = parseFloat(computedStyle.getPropertyValue('font-size'));
+            yesBtn.style.fontSize = (fontSize * 2) + 'px';
+
+            // Fade out the 'No' button
+            noBtn.classList.add("fade");
+
+            // Show warning message
+            alert("Wrong answer, think wisely!");
+        }
+    </script>
+</body>
+</html>
